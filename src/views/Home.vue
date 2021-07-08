@@ -37,16 +37,14 @@
         <nav class="nav">
           <div class="nav-links">
             <ul v-show="!mobile">
-              <router-link class="link" to="#">Home</router-link>
-              <router-link class="link" to="#">Recipe</router-link>
-              <router-link class="link" to="#">About</router-link>
-              <router-link class="link" to="#">Contact</router-link>
+              <router-link class="link bold" to="#">Home</router-link>
+              <router-link class="link" to="/about">About</router-link>
+              <router-link class="link" to="/contact">Contact</router-link>
             </ul>
           </div>
           <transition name="mobile-nav">
             <ul class="mobile-nav" v-show="mobileNav">
-              <router-link class="link" to="#">Home</router-link>
-              <router-link class="link" to="#">Recipe</router-link>
+              <router-link class="link bold" to="#">Home</router-link>
               <router-link class="link" to="#">About</router-link>
               <router-link class="link" to="#">Contact</router-link>
             </ul>
@@ -88,6 +86,7 @@ export default {
   created() {
     window.addEventListener("resize", this.checkScreen);
     this.checkScreen();
+    this.$store.dispatch("fetchRecipes");
   },
   methods: {
     checkScreen() {

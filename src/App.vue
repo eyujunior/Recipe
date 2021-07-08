@@ -53,6 +53,16 @@ a {
   &-primary {
     background: #238147;
     color: #fff;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background: lighten(#238147, 10);
+    }
   }
+}
+
+.bold {
+  font-weight: bold !important;
+  color: rgb(231, 172, 63);
 }
 </style>

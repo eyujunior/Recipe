@@ -1,11 +1,16 @@
 <template>
   <div>
-    this is contact page
+    <the-nav-bar current="contact" />
   </div>
 </template>
 
 <script>
-export default {};
+import TheNavBar from "../components/TheNavBar.vue";
+export default {
+  components: {
+    TheNavBar,
+  },
+};
 </script>
 
 <style scoped></style>

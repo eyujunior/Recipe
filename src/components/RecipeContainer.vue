@@ -1,13 +1,6 @@
 <template>
   <div class="container">
-    <recipe-card />
-    <recipe-card />
-    <recipe-card />
-    <recipe-card />
-    <recipe-card />
-    <recipe-card />
-    <recipe-card />
-    <recipe-card />
+    <recipe-card v-for="recipe in Recipes" :key="recipe.id" :recipe="recipe" />
   </div>
 </template>
 
@@ -16,6 +9,11 @@ import RecipeCard from "./RecipeCard.vue";
 export default {
   components: {
     RecipeCard,
+  },
+  computed: {
+    Recipes() {
+      return this.$store.getters.getRecipes;
+    },
   },
 };
 </script>

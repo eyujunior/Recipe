@@ -1,14 +1,31 @@
 <template>
   <div class="flex">
-    <input type="text" class="search-input" placeholder="Enter your meal..." />
-    <button class="btn btn-circle">
+    <input
+      type="text"
+      class="search-input"
+      placeholder="Enter your meal..."
+      v-model="query"
+    />
+    <button class="btn btn-circle" @click="searchRecipe">
       <img src="../assets/images/search.svg" alt=" search" class="img" />
     </button>
   </div>
 </template>
 
 <script>
-export default {};
+export default {
+  name: "searchInput",
+  data() {
+    return {
+      query: "",
+    };
+  },
+  methods: {
+    searchRecipe() {
+      this.$store.dispatch("searchRecipe", this.query);
+    },
+  },
+};
 </script>
 
 <style lang="scss" scoped>

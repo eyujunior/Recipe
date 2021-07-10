@@ -29,7 +29,9 @@ html {
 body {
   font-family: "poppins";
 }
-
+.home {
+  overflow: hidden;
+}
 li {
   list-style: none;
 }

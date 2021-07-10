@@ -7,12 +7,17 @@
 <script>
 import RecipeCard from "./RecipeCard.vue";
 export default {
+  props: ["list"],
   components: {
     RecipeCard,
   },
   computed: {
     Recipes() {
-      return this.$store.getters.getRecipes;
+      if (this.list === "all") {
+        return this.$store.getters.getRecipes;
+      } else {
+        return this.$store.getters.getFav;
+      }
     },
   },
 };
@@ -22,7 +27,7 @@ export default {
 .container {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(30rem, 1fr));
-  grid-gap: 8rem 2rem;
+  grid-gap: 2rem;
   padding: 2rem 6rem;
   width: 100%;
   place-content: center;

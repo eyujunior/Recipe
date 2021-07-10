@@ -12,6 +12,13 @@
           <router-link
             class="link"
             :class="{ bold: current === 'about' }"
+            to="/favourite"
+            >Favourite</router-link
+          >
+
+          <router-link
+            class="link"
+            :class="{ bold: current === 'about' }"
             to="/about"
             >About</router-link
           >
@@ -33,6 +40,7 @@
       <transition name="mobile-nav">
         <ul class="mobile-nav" v-show="mobileNav">
           <router-link class="link" :to="{ name: 'Home' }">Home</router-link>
+          <router-link class="link" to="/favourite">Favourite</router-link>
           <router-link class="link" to="/about">About</router-link>
           <router-link class="link" to="/contact">Contact</router-link>
         </ul>

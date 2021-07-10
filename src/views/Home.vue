@@ -38,6 +38,8 @@
           <div class="nav-links">
             <ul v-show="!mobile">
               <router-link class="link bold" to="#">Home</router-link>
+              <router-link class="link" to="/favourite">Favourite</router-link>
+
               <router-link class="link" to="/about">About</router-link>
               <router-link class="link" to="/contact">Contact</router-link>
             </ul>
@@ -45,8 +47,9 @@
           <transition name="mobile-nav">
             <ul class="mobile-nav" v-show="mobileNav">
               <router-link class="link bold" to="#">Home</router-link>
-              <router-link class="link" to="#">About</router-link>
-              <router-link class="link" to="#">Contact</router-link>
+              <router-link class="link" to="/favourite">Favourite</router-link>
+              <router-link class="link" to="/about">About</router-link>
+              <router-link class="link" to="/contact">Contact</router-link>
             </ul>
           </transition>
           <img
@@ -62,7 +65,7 @@
     <div class="browse">
       <h2 class="recipe-header">Search your favourite meal</h2>
       <search-input />
-      <recipe-container />
+      <recipe-container list="all" />
     </div>
   </div>
 </template>
@@ -251,6 +254,7 @@ export default {
       .link {
         padding: 15px 0;
         color: #fff;
+        font-size: 1.8rem;
       }
     }
     .nav {

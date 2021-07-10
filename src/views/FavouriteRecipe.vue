@@ -20,7 +20,10 @@ export default {
   },
   computed: {
     isFavouriteEmpty() {
-      return this.$store.getters.getFav.length === 0;
+      return (
+        this.$store.getters.getFav.length === 0 ||
+        this.$store.getters.getFav.length === null
+      );
     },
   },
   created() {
